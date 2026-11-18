@@ -113,7 +113,7 @@ def browse(customer_user, places):
 
 def place_menu(customer_user, place):
     while True:
-        print("\n===", place.name, "===")
+        print("\n==========", place.name.upper(), "==========")
         place.show_products()
         print("1. Add product to cart")
         print("2. View cart")
@@ -209,6 +209,7 @@ def customer_menu(customer_user):
         print("4. Support")
         print("5. Promo codes")
         print("6. Log out")
+        print("7. Exit")
 
         choose=input("Choose: ")
         if choose=="1":
@@ -228,14 +229,18 @@ def customer_menu(customer_user):
         elif choose=="6":
             print("Logged out")
             return
+        elif choose=="7":
+            print("Thank you for using Pick It Up!")
+            print("We look forward to seeing you again!")
+            raise SystemExit
         else:
             print("Invalid choice")
 
 def create_business():
     print("=== Create Business User ===")
-    name = input("Owner name: ")
-    username = input("Username: ")
-    business_name = input("Business name: ")
+    name=input("Owner name: ")
+    username=input("Username: ")
+    business_name=input("Business name: ")
     if not name or not username or not business_name or username_exist(username):
         print("Missing information or username already exists")
         return
@@ -363,6 +368,7 @@ def admin_menu(admin_user):
         print("5. Revenue")
         print("6. All orders")
         print("7. Log out")
+        print("8. Exit")
         choose=input("Choose: ")
         if choose=="1":
             manage_business_users()
@@ -386,6 +392,10 @@ def admin_menu(admin_user):
         elif choose=="7":
             print("Logged out")
             return
+        elif choose=="8":
+            print("\nBehind every great project is great leader!")
+            print("See you soon, friend! ")
+            raise SystemExit
         else:
             print("Invalid choice")
 
@@ -439,6 +449,7 @@ def business_menu(business_user):
         print("2. View my orders")
         print("3. Business information")
         print("4. Log out")
+        print("5. Exit")
         choose=input("Choose: ")
         if choose=="1":
             manage_business_products(business_user)
@@ -453,6 +464,10 @@ def business_menu(business_user):
         elif choose=="4":
             print("Logged out")
             return
+        elif choose=="5":
+            print("\nYour success is our success!")
+            print("See you soon, friend!")
+            raise SystemExit
         else:
             print("Invalid choice")
 

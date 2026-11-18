@@ -4,9 +4,11 @@ class Product:
         self.price=price
         self.preparation_minutes=preparation_minutes
 
-    def prepare(self):
-        print(f"{self.name} - {self.price:,.0f} UZS "
-            f"(preparation: {self.preparation_minutes} min)")
+    def show(self):
+        print(f"- {self.name}")
+        print(f"  Price: {self.price:,.0f} UZS")
+        print(f"  Preparation: {self.preparation_minutes} min")
+        print()
 
 
 

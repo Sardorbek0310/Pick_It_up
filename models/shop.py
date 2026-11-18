@@ -4,12 +4,12 @@ class Shop:
         self.products=products if products is not None else []
 
     def show_products(self):
-        print("PRODUCTS:")
+        print("========== Products ==========:")
         if not self.products:
             print("No products available.")
         for product in self.products:
-            print("-", end="")
             product.show()
+            print("----------------------------")
 
     def find_product(self, product_name):
         for product in self.products:
