@@ -18,11 +18,9 @@ class OrderService:
         items = []
         for item in customer.cart.items.values():
             product = item["product"]
-            items.append({
-                "name": product.name,
+            items.append({"name": product.name,
                 "quantity": item["quantity"],
-                "unit_price": product.price,
-            })
+                "unit_price": product.price,})
 
         total = customer.cart.total()
         if promo:
@@ -38,16 +36,14 @@ class OrderService:
             ready_at = scheduled_time
             order_type = "SCHEDULED"
 
-        order = Order(
-            order_id,
+        order = Order(order_id,
             customer.username,
             place_name,
             items,
             total,
             ready_at,
             preparation_minutes,
-            order_type,
-        )
+            order_type,)
         customer.orders.append(order)
         customer.cart = customer.cart.__class__()
         return order

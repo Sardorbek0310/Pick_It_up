@@ -7,8 +7,8 @@ class Shop:
         print("PRODUCTS:")
         if not self.products:
             print("No products available.")
-        for index, product in enumerate(self.products, start=1):
-            print(f"{index}. ", end="")
+        for product in self.products:
+            print("-", end="")
             product.show()
 
     def find_product(self, product_name):
